@@ -795,11 +795,6 @@ export default class GameScene extends Phaser.Scene {
             popup.add(elements);
         }
 
-        // Build element list (use titleImg, not undefined `title`)
-        const elements = [dim, titleImg, retry, exit];
-        if (scoreTextObj) elements.push(scoreTextObj);
-        popup.add(elements);
-
         // Animate and show popup
         this.tweens.add({
             targets: popup,
@@ -810,7 +805,7 @@ export default class GameScene extends Phaser.Scene {
             ease: "Back.Out"
         });
     }
-
+    
     saveScore(score) {
         if (this.scoreSaved) return false;
         this.scoreSaved = true;
