@@ -44,7 +44,6 @@ export default class BootScene extends Phaser.Scene {
     preload() {
         this.load.video("startVid", startVideo, "loadeddata", false, true);
         this.load.video("menuVid", menuVideo, "loadeddata", false, true);
-        this.load.image("mushroom", mushroomImg);
         this.load.image("fairy", fairyImg);
         this.load.image("bg", bgImg);
         this.load.image("forestBg", forestImg);
