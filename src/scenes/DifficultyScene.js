@@ -122,27 +122,42 @@ export default class DifficultyScene extends Phaser.Scene {
     createImgButton("hardmode", startY + spacing * 2, "hard");
 
     // ==================================================
-    //  HIGHEST SCORE BUTTON
+    //  HIGHEST SCORE BUTTON - ONLY SHOW FOR TIMED MODE
     // ==================================================
-    const highScoreBtn = this.add.image(
-      width / 2,
-      height * 0.84,
-      "highestscore"
-    )
-      .setScale(0.12)
-      .setInteractive({ useHandCursor: true });
+    if (this.mode === "timed") {  // ⬅️ ONLY create for Magic Circle (timed mode)
+      const highScoreBtn = this.add.image(
+        width / 2,
+        height * 0.84,
+        "highestscore"
+      )
+        .setScale(0.12)
+        .setInteractive({ useHandCursor: true });
 
-    highScoreBtn.on("pointerover", () => {
-      this.tweens.add({ targets: highScoreBtn, scale: 0.16, duration: 150 });
-    });
+      highScoreBtn.on("pointerover", () => {
+        this.tweens.add({ targets: highScoreBtn, scale: 0.16, duration: 150 });
+      });
 
-    highScoreBtn.on("pointerout", () => {
-      this.tweens.add({ targets: highScoreBtn, scale: 0.12, duration: 150 });
-    });
+      highScoreBtn.on("pointerout", () => {
+        this.tweens.add({ targets: highScoreBtn, scale: 0.12, duration: 150 });
+      });
 
-    highScoreBtn.on("pointerdown", () => {
-      this.showHighestScores();
-    });
+      highScoreBtn.on("pointerdown", () => {
+        this.showHighestScores();
+      });
+    } else {
+      // For Traveler's Route mode (path), you could add a different button or message
+      // For example, a "How to Play" button or just leave it empty
+      const instructionText = this.add.text(
+        width / 2,
+        height * 0.84,
+        "Complete all bridges without time pressure!",
+        {
+          fontSize: "20px",
+          fill: "#ffffff",
+          align: "center"
+        }
+      ).setOrigin(0.5);
+    }
   }
 
   showHighestScores() {
