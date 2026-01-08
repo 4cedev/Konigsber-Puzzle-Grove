@@ -1,0 +1,16 @@
+{
+  "name": "konigsberg-challenge",
+  "version": "1.0.0",
+  "description": "A fairy-themed Eulerian path puzzle game based on graph traversal logic.",
+  "scripts": {
+    "start": "parcel public/index.html --open",
+    "build": "parcel build public/index.html --public-url ./"
+  },
+  "dependencies": {
+    "phaser": "^3.70.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.0",
+    "process": "^0.11.10"
+  }
+}
