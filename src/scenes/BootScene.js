@@ -1,4 +1,3 @@
-const mushroomImg = new URL("../assets/mushroom.png", import.meta.url).href;
 const fairyImg = new URL("../assets/fairy.png", import.meta.url).href;
 const bgImg = new URL("../assets/forest-bg.jpg", import.meta.url).href;
 const forestImg = new URL("../assets/forest.png", import.meta.url).href;
